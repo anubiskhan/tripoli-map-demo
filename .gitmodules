@@ -1,0 +1,3 @@
+[submodule "src/sof-slippy-maps"]
+	path = src/sof-slippy-maps
+	url = https://github.digitalglobe.com/creativeservices/sof-slippy-maps

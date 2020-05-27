@@ -1,0 +1,74 @@
+{
+  "name": "SOF-demo",
+  "version": "0.0.1",
+  "description": "SOF app demo",
+  "main": "index.html",
+  "repository": "git@github.digitalglobe.com:creativeservices/sof-app-demo.git",
+  "author": "Justin Vetter <justin.vetter@digitalglobe.com>",
+  "license": "MIT",
+  "paths": {
+    "serverProxy": "/",
+    "src": "./src",
+    "dist": "./build",
+    "temp": "./.tmp",
+    "styles": "/styles",
+    "scripts": "/scripts",
+    "fonts": "/fonts",
+    "images": "/images",
+    "video": "/video",
+    "vendorModules": "./vendor_modules"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "materialize-css": "^1.0.0-rc.1",
+    "reveal.js": "git://github.com/hakimel/reveal.js.git"
+  },
+  "devDependencies": {
+    "beepbeep": "^1.2.2",
+    "browser-sync": "^2.24.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-changed": "^4.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-filter": "^6.0.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-inject": "^5.0.4",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-yarn": "^2.0.0",
+    "minimist": "^1.2.0",
+    "run-sequence": "^2.2.1",
+    "stream-series": "^0.1.1"
+  },
+  "overrides": {
+    "main": [
+      "./vendor_modules/jquery/dist/jquery.min.js",
+      "./vendor_modules/reveal.js/lib/js/head.min.js",
+      "./vendor_modules/reveal.js/lib/js/classList.js",
+      "./vendor_modules/reveal.js/js/reveal.js",
+      "./vendor_modules/reveal.js/css/reveal.css",
+      "./vendor_modules/reveal.js/css/theme/simple.css",
+      "./vendor_modules/materialize-css/dist/css/materialize.min.css",
+      "./vendor_modules/materialize-css/dist/js/materialize.js"
+    ]
+  },
+  "browserslist": [
+    "last 2 versions",
+    "android 4",
+    "opera 12"
+  ]
+}

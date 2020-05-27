@@ -1,0 +1,7 @@
+node_modules
+vendor_modules
+.tmp
+
+build/
+
+src/images/\.DS_Store

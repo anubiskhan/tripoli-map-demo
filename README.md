@@ -1,2 +1,1 @@
-# tripoli-map-demo
- test
+SOF-demo
