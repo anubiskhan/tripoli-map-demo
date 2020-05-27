@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Swipe between maps</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	@font-face {
+  font-family: myFont;
+  src: url(Blender-Book.otf);
+}
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+
+	.jx-label-left {
+	font: 20px/20px myFont;
+	padding: .25em .75em;
+	position: relative;
+	display: inline-block;
+	top: 0;
+	background-color: #000; /* IE 8 */
+	background-color: rgba(0,0,0,.7);
+	color: white;
+	z-index: 10;
+	white-space: nowrap;
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+	.jx-label-right {
+	float: right;
+	font: 20px/20px myFont;
+	padding: .25em .75em;
+	position: relative;
+	display: inline-block;
+	top: 0;
+	background-color: #000; /* IE 8 */
+	background-color: rgba(0,0,0,.7);
+	color: white;
+	z-index: 10;
+	white-space: nowrap;
+	line-height: 18px;
+	vertical-align: middle;
+}
+</style>
+</head>
+<body>
+<style>
+body {
+overflow: hidden;
+}
+
+body * {
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+.map {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 100%;
+}
+</style>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+<link
+rel="stylesheet"
+href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css"
+type="text/css"
+/>
+  <style>
+    .mapboxgl-compare .compare-swiper-vertical{
+      background-color: #FDB912;
+    }
+  </style>
+<div id="comparison-container">
+<div id="before" class="map"></div>
+	<div class="jx-label-left">2011 Imagery</div>
+<div id="after" class="map"></div>
+	<div class="jx-label-right">2018 Mosaic</div>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGdpbnRlcmFjdGl2ZSIsImEiOiJKSGczdWhnIn0.UyoVWvXEQ6KO_xx1Ry2lQA';
+
+var beforeMap = new mapboxgl.Map({
+container: 'before',
+style: 'mapbox://styles/dginteractive/ck8ort4y70f4l1imtb0a5xk9l',
+center: [0, 0],
+zoom: 0,
+maxBounds: [[13.253879, 32.854785],[13.305782, 32.910243]]
+});
+
+var afterMap = new mapboxgl.Map({
+container: 'after',
+style: 'mapbox://styles/dginteractive/ck9eg70gk16ik1lmpwtaoihr1',
+center: [0, 0],
+zoom: 0,
+maxBounds: [[13.253879, 32.854785],[13.305782, 32.910243]]
+});
+
+// afterMap.on('style.load', function() {
+//   afterMap.setLayoutProperty('bf-centroids-0ygnop', 'visibility', 'none')
+//   afterMap.setLayoutProperty('j229-tripoli-lby-4web', 'visibility', 'none')
+// });
+
+// A selector or reference to HTML element
+var container = '#comparison-container';
+
+var map = new mapboxgl.Compare(beforeMap, afterMap, container, {
+// Set this to enable comparing two maps by mouse movement:
+// mousemove: true
+});
+</script>
+
+</body>
+</html>
+

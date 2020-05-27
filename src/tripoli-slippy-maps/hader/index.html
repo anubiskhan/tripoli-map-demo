@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+<title>Untitled Document</title>
+	<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+<style type="text/css">
+.menu-ui {
+  font-family: Arial, Helvetica, sans-serif;
+  background:#fff;
+  position:absolute;
+  top:10px;right:10px;
+  z-index:1;
+  border-radius:3px;
+  width:120px;
+  border:1px solid rgba(0,0,0,0.4);
+  }
+  .menu-ui a {
+    font-size:13px;
+    color:#404040;
+    display:block;
+    margin:0;padding:0;
+    padding:10px;
+    text-decoration:none;
+    border-bottom:1px solid rgba(0,0,0,0.25);
+    text-align:center;
+    }
+    .menu-ui a:first-child {
+      border-radius:3px 3px 0 0;
+      }
+    .menu-ui a:last-child {
+      border:none;
+      border-radius:0 0 3px 3px;
+      }
+    .menu-ui a:hover {
+      background:#f8f8f8;
+      color:#404040;
+      }
+    .menu-ui a.active {
+      background:#3887BE;
+      color:#FFF;
+      }
+      .menu-ui a.active:hover {
+        background:#3074a4;
+        }
+
+
+    .title {
+      padding: 5px;
+      text-align: center;
+      vertical-align: center;
+      position: relative;
+    }
+
+</style>
+</head>
+
+<body>
+<nav id='menu-ui' class='menu-ui'>
+  <div class="title">Layers</div>
+</nav>
+<div id='map'></div>
+	
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZGdpbnRlcmFjdGl2ZSIsImEiOiJKSGczdWhnIn0.UyoVWvXEQ6KO_xx1Ry2lQA';
+
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/dginteractive/ck8k8cl5u06g41imi187jpnlx',
+zoom: 9,
+center: [12.908, 32.610]
+});
+ 
+
+
+map.on('style.load', function() {
+  //start with all toggle layers visible
+  map.setLayoutProperty('Airfields', 'visibility', 'visible')
+  map.setLayoutProperty('Smuggling Routes', 'visibility', 'visible')
+  map.setLayoutProperty('Mosques', 'visibility', 'visible')
+  map.setLayoutProperty('Government AOI', 'visibility', 'visible')
+  map.setLayoutProperty('Embassies', 'visibility', 'visible')
+  map.setLayoutProperty('Hospitals', 'visibility', 'visible')
+  map.setLayoutProperty('Likelihood of Future Attack', 'visibility', 'visible')
+  
+});
+
+
+var toggleableLayerIds = ['Airfields', 'Smuggling Routes', 'Mosques', 'Government AOI', 'Embassies', 'Hospitals', 'Likelihood of Future Attack'];
+ 
+for (var i = 0; i < toggleableLayerIds.length; i++) {
+var id = toggleableLayerIds[i];
+ 
+var link = document.createElement('a');
+link.href = '#';
+link.className = 'active';
+link.textContent = id;
+ 
+link.onclick = function(e) {
+var clickedLayer = this.textContent;
+e.preventDefault();
+e.stopPropagation();
+ 
+var visibility = map.getLayoutProperty(clickedLayer, 'visibility');
+ 
+if (visibility === 'visible') {
+map.setLayoutProperty(clickedLayer, 'visibility', 'none');
+this.className = '';
+} else {
+this.className = 'active';
+map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
+}
+};
+ 
+var layers = document.getElementById('menu-ui');
+layers.appendChild(link);
+}
+
+var nav = new mapboxgl.NavigationControl({
+        showCompass: false,
+        showZoom: true
+      });
+
+map.addControl(nav, "top-left");
+</script>
+
+</body>
+</html>

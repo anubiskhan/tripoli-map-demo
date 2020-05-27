@@ -319,8 +319,8 @@ function html() {
 };
 
 function copyMaps() {
-	return src(pkg.paths.src + '/sof-slippy-maps/**/*')
-		.pipe(dest(productionDest + '/sof-slippy-maps'))
+	return src(pkg.paths.src + '/tripoli-slippy-maps/**/*')
+		.pipe(dest(productionDest + '/tripoli-slippy-maps'))
 }
 
 function favicon() {
