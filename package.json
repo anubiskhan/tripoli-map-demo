@@ -19,7 +19,7 @@
     "vendorModules": "./vendor_modules"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "materialize-css": "^1.0.0-rc.1",
     "reveal.js": "git://github.com/hakimel/reveal.js.git"
   },
