@@ -9,8 +9,9 @@
 }
 
 .bg__primary {
-  background: rgb(29,38,95);
-  background: linear-gradient(45deg, rgba(29,38,95,1) 0%, rgba(97,186,70,1) 100%);
+  // background: rgb(29,38,95);
+  // background: linear-gradient(45deg, rgba(29,38,95,1) 0%, rgba(97,186,70,1) 100%);
+  background: #2e2e2e;
   color     : white;
   text-align: center;
 }
@@ -30,9 +31,9 @@
   height      : 4em;
   line-height : 4em;
   padding-left: 3em;
-  transition: background-color .5s ease;
+  // transition: background-color .5s ease;
   &.active {
-    background-color: #a5d6a7;
+    background-color: #fcaf17;
   }
 }
 

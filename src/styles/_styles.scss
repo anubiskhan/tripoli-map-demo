@@ -47,12 +47,13 @@ h6 {
 }
 
 #analytic-capabilities,
-#case-study-background,
+#case-study-pcm-background,
+#case-study-pcm-background,
 #intelligence,
-#mission-support,
 #revealing-insights,
-#operational-planning {
-	background : linear-gradient(45deg, #1d265f 0%, #61ba46 100%);
+#operational-planning,
+#predictive-analytics {
+	background : #434343;
 	color      : white;
 	padding-top: 0;
 	min-height : 100vh;
@@ -108,13 +109,18 @@ p {
 
 #analytic-capabilities,
 #revealing-insights {
-	background     : url('../images/rs_story_map_1-2.jpg') center center no-repeat;
+	// background     : url('../images/rs_story_map_1-2.jpg') center center no-repeat;
 	background-size: cover;
 }
 
 #case-study-insight,
 #intelligence-insights-recommendations,
-#mission-support-insights {
+#mission-support-insights,
+#case-study-quality,
+#case-study-foundational-copy,
+#mission-support,
+#predictive-analytics,
+#predictive-analytics-copy {
 	padding   : 0;
 	text-align: left;
 
@@ -245,21 +251,27 @@ section {
 				@media (max-width: 992px) {}
 			}
 
-			#case-study-insight {
+			#case-study-foundational-copy {
 				.content-left {
-					background-image: url('../images/map-1.png');
+					background-image: url('../images/pcm_static.png');
 				}
 			}
 
-			#intelligence-insights-recommendations {
+			#case-study-quality {
 				.content-left {
-					background-image: url('../images/map-2.png');
+					background-image: url('../images/footprints_static.png');
 				}
 			}
 
-			#mission-support-insights {
+			#predictive-analytics-copy {
 				.content-left {
-					background-image: url('../images/map-3.png');
+					background-image: url('../images/predictive_static.png');
+				}
+			}
+			
+			#mission-support {
+				.content-left {
+					background-image: url('../images/insights_static.png');
 				}
 			}
 
@@ -299,4 +311,9 @@ section {
 			}
 		}
 	}
+}
+
+.expository {
+	font-size: 1em !important;
+	overflow-y: scroll;
 }
